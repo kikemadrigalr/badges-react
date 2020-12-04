@@ -1,0 +1,38 @@
+.Home__container {
+  width: 100%;
+  background: url("../../images/stars.svg"), #1b1b25;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home__Row {
+  margin: 0;
+}
+
+.Home__col {
+  color: white;
+  margin-top: 10%;
+}
+
+.Home__col h3 {
+  margin-top: 2rem;
+}
+
+@media (max-width: 991.98px) {
+  .Home__container {
+    height: 130vh;
+    margin-top: 0;
+  }
+
+  .Home__row {
+    margin: auto;
+    text-align: center;
+  }
+
+  .Home__col {
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+}
