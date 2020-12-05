@@ -5,8 +5,27 @@ import logo from "../images/platziconf-logo.svg";
 import Badge from "../components/Badge";
 import DeleteBadgeModal from "../components/DeleteBadgeModal";
 
+//custom hooks
+//los custom hooks siempre usan la palabra use en su definicion
+function useIncreaseCount(max) {
+  const [count, setCount] = React.useState(0);
+
+  if (count > max) {
+    setCount(0);
+  }
+
+  return [count, setCount];
+}
+
 function BadgeDetails(props) {
+  //hooks
+  //useState devuelve dos argumentos que seran recibidos
+  //en los corchetes, ya que regresa un arreglo
+  // este estado se inicializa con el argumento que se le pasa a useState
+  // const [count, setCount] = React.useState(0)
+  const [count, setCount] = useIncreaseCount(4);
   const badge = props.badge;
+  // const count = 3;
   return (
     <React.Fragment>
       <div className="BadgeDetails__hero">
@@ -37,6 +56,18 @@ function BadgeDetails(props) {
           </div>
           <div className="col-6 BadgeDetails__buttons">
             <h2>Actions</h2>
+            <div>
+              <button
+                onClick={() => {
+                  //se estado usando el hook para cambiar este estado
+                  //no usa el estado del componente class
+                  setCount(count + 1);
+                }}
+                className="btn btn-primary mr-4 mb-4"
+              >
+                Increase Count: {count}
+              </button>
+            </div>
             <div>
               <Link
                 className="btn btn-primary mb-4"

@@ -11,8 +11,8 @@ function Home() {
         <div className="row Home__row">
           <div className="col-md-12 col-lg-4 Home__col">
             <img className="img-fluid" src={HomeLogo} alt="Logo" />
-            <h3>Create Your Badge</h3>
-            <Link to="/badges/new" className="btn btn-primary">
+            <h3>Print your Badge</h3>
+            <Link to="/badges" className="btn btn-primary">
               Start
             </Link>
           </div>
